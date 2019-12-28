@@ -7,10 +7,10 @@ public class Area {
     Point D;
 
     public Area(Point A, Point B, Point C, Point D){
-        A = A;
-        B = C;
-        C = C;
-        D = D;
+        this.A = A;
+        this.B = B;
+        this.C = C;
+        this.D = D;
     }
 
     public String contains(Point point){

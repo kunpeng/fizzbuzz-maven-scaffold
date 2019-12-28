@@ -16,10 +16,10 @@ public class RoverTest {
 
     @Test
     public void land_test(){
-        Point A = new Point(10, 10, Direction.SOUTH);
-        Point B = new Point(-10, 10, Direction.SOUTH);
-        Point C = new Point(-10, -10, Direction.SOUTH);
-        Point D = new Point(10, -10, Direction.SOUTH);
+        Point A = new Point(10, 0, Direction.SOUTH);
+        Point B = new Point(0, 0, Direction.SOUTH);
+        Point C = new Point(0, 10, Direction.SOUTH);
+        Point D = new Point(10, 10, Direction.SOUTH);
 
         Area area = new Area(A, B, C, D);
 
@@ -32,10 +32,10 @@ public class RoverTest {
 
     @Test
     public void go_forward(){
-        Point A = new Point(10, 10, Direction.SOUTH);
-        Point B = new Point(-10, 10, Direction.SOUTH);
-        Point C = new Point(-10, -10, Direction.SOUTH);
-        Point D = new Point(10, -10, Direction.SOUTH);
+        Point A = new Point(10, 0, Direction.SOUTH);
+        Point B = new Point(0, 0, Direction.SOUTH);
+        Point C = new Point(0, 10, Direction.SOUTH);
+        Point D = new Point(10, 10, Direction.SOUTH);
 
         Area area = new Area(A, B, C, D);
 
@@ -53,10 +53,10 @@ public class RoverTest {
 
     @Test
     public void turn_test(){
-        Point A = new Point(10, 10, Direction.SOUTH);
-        Point B = new Point(-10, 10, Direction.SOUTH);
-        Point C = new Point(-10, -10, Direction.SOUTH);
-        Point D = new Point(10, -10, Direction.SOUTH);
+        Point A = new Point(10, 0, Direction.SOUTH);
+        Point B = new Point(0, 0, Direction.SOUTH);
+        Point C = new Point(0, 10, Direction.SOUTH);
+        Point D = new Point(10, 10, Direction.SOUTH);
 
         Area area = new Area(A, B, C, D);
 
@@ -68,15 +68,15 @@ public class RoverTest {
 
         String result = rover.getPostion();
 
-        assertThat(result).isEqualTo("22W");
+        assertThat(result).isEqualTo("22E");
     }
 
     @Test
     public void batch_move_test(){
-        Point A = new Point(10, 10, Direction.SOUTH);
-        Point B = new Point(-10, 10, Direction.SOUTH);
-        Point C = new Point(-10, -10, Direction.SOUTH);
-        Point D = new Point(10, -10, Direction.SOUTH);
+        Point A = new Point(10, 0, Direction.SOUTH);
+        Point B = new Point(0, 0, Direction.SOUTH);
+        Point C = new Point(0, 10, Direction.SOUTH);
+        Point D = new Point(10, 10, Direction.SOUTH);
 
         Area area = new Area(A, B, C, D);
 
@@ -96,10 +96,10 @@ public class RoverTest {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("超出范围");
 
-        Point A = new Point(10, 10, Direction.SOUTH);
-        Point B = new Point(-10, 10, Direction.SOUTH);
-        Point C = new Point(-10, -10, Direction.SOUTH);
-        Point D = new Point(10, -10, Direction.SOUTH);
+        Point A = new Point(10, 0, Direction.SOUTH);
+        Point B = new Point(0, 0, Direction.SOUTH);
+        Point C = new Point(0, 10, Direction.SOUTH);
+        Point D = new Point(10, 10, Direction.SOUTH);
 
         Area area = new Area(A, B, C, D);
 

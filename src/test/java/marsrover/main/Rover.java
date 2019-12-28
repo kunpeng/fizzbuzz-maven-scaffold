@@ -7,7 +7,8 @@ public class Rover {
         this.area = area;
         this.point = point;
 
-        if(point.getX() > area.A.getX() || point.getX() < area.B.getX() || point.getY() > area.C.getY() || point.getY() < area.B.getY()){
+        if(point.getX() >= area.A.getX() || point.getX() <= area.B.getX()
+            || point.getY() >= area.C.getY() || point.getY() <= area.B.getY()){
             throw new IllegalArgumentException("超出范围");
         }
 
