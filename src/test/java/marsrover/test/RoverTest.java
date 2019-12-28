@@ -45,4 +45,24 @@ public class RoverTest {
         assertThat(result).isEqualTo("21S");
 
     }
+
+    @Test
+    public void turn_test(){
+        Point A = new Point(10, 10, Direction.SOUTH);
+        Point B = new Point(-10, 10, Direction.SOUTH);
+        Point C = new Point(-10, -10, Direction.SOUTH);
+        Point D = new Point(10, -10, Direction.SOUTH);
+
+        Area area = new Area(A, B, C, D);
+
+        Rover rover = new Rover();
+
+        rover.land(area, new Point(2,2,Direction.SOUTH));
+
+        rover.turn("left");
+
+        String result = rover.getPostion();
+
+        assertThat(result).isEqualTo("22E");
+    }
 }

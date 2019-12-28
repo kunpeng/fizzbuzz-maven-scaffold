@@ -30,4 +30,11 @@ public class Rover {
 
         return "" + point.getX() + point.getY()+point.getDirection().getDirect();
     }
+
+    public void turn(String direction) {
+//        switch(direction){
+////            case "left":
+////                point.getDirection().
+////        }
+    }
 }
