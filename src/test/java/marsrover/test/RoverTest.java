@@ -59,10 +59,10 @@ public class RoverTest {
 
         rover.land(area, new Point(2,2,Direction.SOUTH));
 
-        rover.turn("left");
+        rover.turn("right");
 
         String result = rover.getPostion();
 
-        assertThat(result).isEqualTo("22E");
+        assertThat(result).isEqualTo("22W");
     }
 }
