@@ -4,11 +4,16 @@ import marsrover.main.Area;
 import marsrover.main.Direction;
 import marsrover.main.Point;
 import marsrover.main.Rover;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public class RoverTest {
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
     @Test
     public void land_test(){
         Point A = new Point(10, 10, Direction.SOUTH);
@@ -59,7 +64,7 @@ public class RoverTest {
 
         rover.land(area, new Point(2,2,Direction.SOUTH));
 
-        rover.turn("right");
+        rover.turn("L");
 
         String result = rover.getPostion();
 
@@ -78,11 +83,29 @@ public class RoverTest {
         Rover rover = new Rover();
         rover.land(area, new Point(2,2,Direction.NORTH));
 
-        String order = "10F,R,5F,R";
+        String order = "10,R;5,R";
         rover.execute(order);
         String result = rover.getPostion();
 
         assertThat(result).isEqualTo("712S");
 
+    }
+
+    @Test
+    public void over_area_test(){
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("超出范围");
+
+        Point A = new Point(10, 10, Direction.SOUTH);
+        Point B = new Point(-10, 10, Direction.SOUTH);
+        Point C = new Point(-10, -10, Direction.SOUTH);
+        Point D = new Point(10, -10, Direction.SOUTH);
+
+        Area area = new Area(A, B, C, D);
+
+        Rover rover = new Rover();
+        rover.land(area, new Point(20,20,Direction.NORTH));
+
+        String result = rover.getPostion();
     }
 }
