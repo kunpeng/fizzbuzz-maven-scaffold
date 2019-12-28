@@ -12,4 +12,22 @@ public class FizzBuzzTest {
 
         assertThat(result).isEqualTo("Fizz");
     }
+
+    @Test
+    public void should_return_buzz(){
+        int number = 5;
+
+        String result = FizzBuzz.calc(number);
+
+        assertThat(result).isEqualTo("Buzz");
+    }
+
+    @Test
+    public void should_return_fizz_buzz(){
+        int number = 15;
+
+        String result = FizzBuzz.calc(number);
+
+        assertThat(result).isEqualTo("FizzBuzz");
+    }
 }
