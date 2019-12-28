@@ -39,5 +39,12 @@ public class Rover {
                     break;
             }
         }
+        if(drec == "right"){
+            switch(point.getDirection()){
+                case SOUTH:
+                    point.setDirection(Direction.WEST);
+                    break;
+            }
+        }
     }
 }
