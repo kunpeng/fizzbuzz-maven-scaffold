@@ -47,4 +47,9 @@ public class Rover {
             }
         }
     }
+
+    public void execute(String order) {
+        String[] orders = order.split(",");
+
+    }
 }
